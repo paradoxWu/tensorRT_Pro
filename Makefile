@@ -1,13 +1,13 @@
 cc        := g++
 nvcc      = ${lean_cuda}/bin/nvcc
 
-lean_protobuf  := /datav/lean/protobuf3.11.4
-lean_tensor_rt := /datav/lean/TensorRT-8.2.3.0-cuda11.4-cudnn8.2
-lean_cudnn     := /datav/lean/cudnn8.2.4.15-cuda11.4
-lean_opencv    := /datav/lean/opencv-4.2.0
-lean_cuda      := /datav/lean/cuda-11.2
+lean_protobuf  := /usr/local
+lean_tensor_rt := /tensorRT_Pro/TensorRT-8.2.1.8
+lean_cudnn     := /usr
+lean_opencv    := /usr/local
+lean_cuda      := /usr/local/cuda-11.4
 use_python     := true
-python_root    := /datav/software/anaconda3
+python_root    := /root/miniconda3
 
 # python_root指向的lib目录下有个libpython3.9.so，因此这里写python3.9
 # 对于有些版本，so名字是libpython3.7m.so，你需要填写python3.7m
@@ -16,7 +16,7 @@ python_name    := python3.9
 
 # 如果是其他显卡，请修改-gencode=arch=compute_75,code=sm_75为对应显卡的能力
 # 显卡对应的号码参考这里：https://developer.nvidia.com/zh-cn/cuda-gpus#compute
-cuda_arch := # -gencode=arch=compute_75,code=sm_75
+cuda_arch :=  -gencode=arch=compute_86,code=sm_86
 
 cpp_srcs  := $(shell find src -name "*.cpp")
 cpp_objs  := $(cpp_srcs:.cpp=.cpp.o)

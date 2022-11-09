@@ -94,3 +94,7 @@ __pycache__
 /restful_server/objs
 /restful_server/workspace/*.trtmodel
 /restful_server/workspace/*.onnx
+
+/opencv-4.2.0
+/TensorRT-8.2.1.8
+/pblib
